@@ -1,0 +1,9 @@
+/* #region reset */
+* {
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'palanquin', 'palanquin-dark';
+  color: white;
+}
+/* #endregion */
