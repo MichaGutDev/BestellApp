@@ -13,9 +13,12 @@
     <script src="./script.js"></script>
   </head>
   <body>
-    <header>
-      <div>
-        <img src="./assets/icons/bestell-app.svg" alt="Logo BestellApp" />
+    <header class="main-header">
+      <div class="main-header-content">
+        <div>
+          <img src="./assets/icons/takeout-dining-2.svg" alt="" />
+          <img src="./assets/icons/bestell-app.svg" alt="Logo BestellApp" />
+        </div>
         <img src="./assets/icons/dehaze.svg" alt="Burger Menu Icon" />
       </div>
     </header>
@@ -28,24 +31,55 @@
           </figure>
         </div>
         <div class="brand-header">
-          <h1>Burger<span>House</span></h1>
+          <h1>Burger<span class="house">House</span></h1>
           <div class="rating-badge">
             <img src="./assets/icons/star.svg" alt="star-icon" />
             <data value="4.1">4.1</data>
             <small>(117)</small>
           </div>
         </div>
+        <p class="restaurant-tagline">
+          Das Beste aus Burgern, Pizza und Salaten – alles an einem großartigen
+          Ort.
+        </p>
       </section>
       <div class="ordering-system">
-        <section class="menu-section">
-          <header></header>
+        <section class="menu-selection">
+          <section id="category-burgers">
+            <header class="category-divider">
+              <div class="menu-content-limit">
+                <img
+                  src="./assets/img/burger/Chanese 1.png"
+                  alt="Burger Icon"
+                />
+                <h2>Burger</h2>
+              </div>
+            </header>
+            <div id="burgers-list" class="dish-render-target"></div>
+          </section>
+          <section id="category-pizza">
+            <header class="category-divider">
+              <div class="menu-content-limit">
+                <img src="./assets/img/pizza/Pizza 1.png" alt="Pizza Icon" />
+                <h2>Pizza<span class="diameter">(30cm)</span></h2>
+              </div>
+            </header>
+            <div id="pizza-list" class="dish-render-target"></div>
+          </section>
+          <section id="category-salads">
+            <header class="category-divider">
+              <div class="menu-content-limit">
+                <img src="./assets/img/salad/Salad 1.png" alt="Salat Icon" />
+                <h2>Salate</h2>
+              </div>
+            </header>
+            <div id="salads-list" class="dish-render-target"></div>
+          </section>
         </section>
-        <section></section>
-        <section></section>
       </div>
     </main>
     <footer>
-      <div>
+      <div class="copyright">
         <img src="./assets/icons/copyright.svg" alt="copyright icon" />
         <p>2025 BurgerHouse</p>
       </div>
