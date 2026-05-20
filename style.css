@@ -3,7 +3,226 @@
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: 'palanquin', 'palanquin-dark';
-  color: white;
+  font-family: "palanquin";
+  color: #363534;
 }
+/* #endregion */
+
+/* #region base */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+/* #endregion */
+
+/* #region layout */
+
+/* #endregion */
+
+/* #region header */
+.main-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 128px;
+  background-color: var(--bar-color);
+}
+
+.main-header-content {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: var(--content-padding);
+  width: 100%;
+}
+
+/* #endregion */
+
+/* #region hero */
+
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-inline: var(--content-limitation);
+  padding-bottom: 78px;
+}
+
+.hero-brand-area {
+  position: relative;
+  height: 432px;
+  width: 100%;
+  margin: 0px var(--content-limitation);
+  background-image: url(./assets/img/hero-foto.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 80%;
+}
+
+.brand-logo {
+  position: absolute;
+  left: 50%;
+  bottom: -75px;
+  transform: translateX(-50%);
+}
+
+.brand-logo img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 12px solid var(--dishes-color);
+  filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.brand-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding-top: 72px;
+  padding-bottom: 26px;
+  padding-inline: var(--content-padding);
+}
+
+.brand-header h1 {
+  font-family: "palanquin dark";
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--bar-color);
+}
+
+.brand-header h1 span {
+  font-family: "palanquin dark";
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.rating-badge {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transform: translateY(5px);
+  width: 110px;
+  height: 32px;
+  background-color: #facaac;
+  border-radius: 4px;
+}
+
+.rating-badge img {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+}
+
+.rating-badge data {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.rating-badge small {
+  font-size: 18px;
+}
+
+.restaurant-tagline {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* #endregion */
+
+/* #region menu */
+
+.ordering-system {
+  border-top: 78px;
+}
+
+.category-divider {
+  height: 60px;
+  background-color: var(--bar-color);
+}
+
+.menu-content-limit {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 100%;
+  padding-inline: var(--content-padding);
+}
+
+.menu-content-limit img {
+  bottom: 0px;
+  left: 168px;
+  height: 90px;
+  width: 90px;
+  transform: translateY(-12px);
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.diameter {
+  font-weight: 400;
+  color: #ffffff;
+  margin-left: 18px;
+}
+
+.dish-render-target {
+  height: 200px;
+}
+
+/* #endregion */
+
+/* #region dish cards */
+
+/* #endregion */
+
+/* #region basket */
+
+/* #endregion */
+
+/* #region buttons */
+
+/* #endregion */
+
+/* #region dialog */
+
+/* #endregion */
+
+/* #region footer */
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 128px;
+  gap: 128px;
+  background-color: var(--bar-color);
+}
+
+footer p {
+  font-size: 18px;
+  color: white;
+    transform: translateY(-3px);
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+/* #endregion */
+
+/* #region utility classes */
+
+/* #endregion */
+
+/* #region media queries */
+
 /* #endregion */
