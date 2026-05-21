@@ -1,10 +1,10 @@
 let dishes = [
 
-    //BURGER
+    //  BURGER
   {
     name: "Veggie mushroom black burger",
     category: "burger",
-    imageSource: "./assets/img/burger/black-burger.jpg",
+    imageSource: "./assets/img/burger/veggie-mushroom-black-burger.jpg",
     imageAlt: "Black Burger",
     price: 16.9,
     ingredients: "Mixed green salad, Tomatoes, Edamame, Mushrooms",
@@ -34,7 +34,7 @@ let dishes = [
     ingredients: "Chicken, Cheese, Tomatoes, Lettuce, Onion, Bell pepper",
   },
 
-  //PIZZA
+  //  PIZZA
 
   {
     name: "Pizza Margherita",
@@ -63,13 +63,13 @@ let dishes = [
   {
     name: "Quattro Formaggi with Chicken",
     category: "pizza",
-    imageSource: "./assets/img/pizza/pizza-quattro-formaggi.jpg",
+    imageSource: "./assets/img/pizza/pizza-quattro-formaggi-with-chicken.jpg",
     imageAlt: "Pizza Quattro Formaggi with Chicken",
     price: 15.9,
     ingredients: "Chicken, Mozzarella, Gorgonzola, Fontina, Parmigiano Reggiano",
   },
 
-  //SALAD
+  //  SALAD
 
   {
     name: "Warm beef arugula salad",
@@ -100,7 +100,7 @@ let dishes = [
   {
     name: "Vegan green salad with tofu",
     category: "salad",
-    imageSource: "./assets/img/salad/vegan-green-salad.jpg",
+    imageSource: "./assets/img/salad/vegan-green-salad-with-tofu.jpg",
     imageAlt: "Vegan green salad with tofu",
     price: 14.9,
     ingredients:
