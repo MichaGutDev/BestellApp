@@ -1,5 +1,5 @@
 function getDishTemplate(dish, index) {
-    return html`
+    return /*html*/`
     <article class="dish-card">
       <img
         class="dish-image"
