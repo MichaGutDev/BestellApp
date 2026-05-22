@@ -136,6 +136,7 @@ body {
 
 .ordering-system {
   border-top: 78px;
+  
 }
 
 .category-divider {
@@ -149,6 +150,7 @@ body {
   gap: 24px;
   height: 100%;
   padding-inline: var(--content-padding);
+  margin-left: 180px;
 }
 
 .menu-content-limit img {
@@ -172,7 +174,13 @@ h2 {
 }
 
 .dish-render-target {
-  height: 200px;
+  display: flex;
+  flex-direction: column;
+  padding-inline: var(--content-padding);
+  padding-top: 32px;
+  padding-bottom: 64px;
+  margin-left: 128px;
+  gap: 16px;
 }
 
 /* #endregion */
@@ -181,7 +189,7 @@ h2 {
 
 .dish-card {
   display: grid;
-  grid-template-columns: 160px 1fr auto;
+  grid-template-columns: 220px 1fr auto;
   align-items: start;
   padding: 10px;
   width: 720px;
@@ -190,7 +198,7 @@ h2 {
 }
 
 .dish-image {
-  width: 120px;
+  width: 200px;
   height: 120px;
   border-radius: 12px;
   object-fit: cover;
@@ -208,6 +216,11 @@ h3 {
   align-items: flex-end;
   justify-content: space-between;
   height: 100%;
+}
+
+.dish-side data {
+  font-size: 24px;
+  font-weight: 600;
 }
 
 /* #endregion */

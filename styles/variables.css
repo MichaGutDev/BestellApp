@@ -2,7 +2,7 @@
   --bar-color: #E76C1F;;
   --dishes-color: #FDEADC;
   --basket-color: #363534;
-  --content-padding: max(calc(50% - 720px), 86px);
+  --content-padding: max(calc(50% - 720px), 32px);
   --content-limitation: max(calc(50% - 720px), 0px);
   --content-padding-medium: max(calc(50% - 720px), 48px);
   --content-padding-small: max(calc(50% - 720px), 24px);
