@@ -108,4 +108,3 @@ let dishes = [
   },
 ];
 
-let basketItems = [];

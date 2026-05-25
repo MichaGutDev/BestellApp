@@ -1,5 +1,6 @@
 // GLOBAL VARIABLES
 
+let basketItems = [];
 
 // INIT
 
@@ -32,8 +33,28 @@ function renderCategory(category, dishListId) {
 
 // EVENT FUNCTIONS
 
-function getButtonLabel() {
-  return "Add to basket";
+function addToBasket(index) {
+    let selectedDish = dishes[index];
+
+    let dishAlreadyExists = false;
+    for (let index = 0; index < basketItems.length; index++) {
+        if (basketItems[index].name === selectedDish.name) {
+            basketItems[index].amount++;
+            dishAlreadyExists = true;
+        }
+
+    }
+
+    if (dishAlreadyExists === false) {
+        basketItems.push({ ...selectedDish, amount: 1 });
+    }
+
+    renderBasket();
+
 }
 
 // HELPER FUNCTIONS
+
+function getButtonLabel() {
+    return "Add to basket";
+}
