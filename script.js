@@ -31,6 +31,17 @@ function renderCategory(category, dishListId) {
     }
 }
 
+function renderBasket() {
+    let basketList = document.getElementById("basket-list");
+
+    basketList.innerHTML = "";
+
+    for (let index = 0; index < basketItems.length; index++) {
+        basketList.innerHTML += getBasketItemTemplate(basketItems[index]);
+        
+    }
+}
+
 // EVENT FUNCTIONS
 
 function addToBasket(index) {

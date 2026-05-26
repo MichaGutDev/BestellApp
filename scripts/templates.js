@@ -1,5 +1,5 @@
 function getDishTemplate(dish, index) {
-    return /*html*/`
+  return /*html*/`
     <article class="dish-card">
       <img
         class="dish-image"
@@ -22,4 +22,15 @@ function getDishTemplate(dish, index) {
       </div>
     </article>
     `;
+}
+
+function getBasketItemTemplate(basketItem) {
+  return /*html*/ `
+  <article class="basket-item">
+    <p>${basketItem.amout}x</p>
+    <p>${basketItem.name}</p>
+    <data value="${basketItem.price}">
+      ${basketItem.price.toFixed(2)} €
+    </data>  
+  </article>`
 }
