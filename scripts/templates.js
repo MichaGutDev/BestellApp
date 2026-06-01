@@ -7,7 +7,7 @@ function getDishTemplate(dish, index) {
         alt="${dish.imageAlt}"
       />
       <div class="dish-info">
-        <h3>${dish.name}</h3>
+        <h4>${dish.name}</h4>
         <p>${dish.ingredients}</p>
       </div>
       <div class="dish-side">
@@ -29,8 +29,13 @@ function getBasketItemTemplate(basketItem) {
   <article class="basket-item">
     <p>${basketItem.amout}x</p>
     <p>${basketItem.name}</p>
-    <data value="${basketItem.price}">
-      ${basketItem.price.toFixed(2)} €
-    </data>  
+     <div class="basket-item-controls">
+        <button type="button">🗑</button>
+        <span>${basketItem.amount}</span>
+        <button type="button">+</button>
+      </div>
+      <data value="${basketItem.price}">
+        ${basketItem.price.toFixed(2)}€
+      </data>  
   </article>`
 }
