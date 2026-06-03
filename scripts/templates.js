@@ -26,16 +26,40 @@ function getDishTemplate(dish, index) {
 
 function getBasketItemTemplate(basketItem) {
   return /*html*/ `
-  <article class="basket-item">
-    <p>${basketItem.amout}x</p>
-    <p>${basketItem.name}</p>
-     <div class="basket-item-controls">
-        <button type="button">🗑</button>
-        <span>${basketItem.amount}</span>
-        <button type="button">+</button>
+    <article class="basket-item">
+      <p class="basket-item-name">
+        ${basketItem.amount} x ${basketItem.name}
+      </p>
+
+      <div class="basket-item-bottom">
+        <div class="basket-item-controls">
+          <button type="button" class="delete-btn">
+            <img src="./assets/icons/delete.svg" alt="Gericht entfernen">
+          </button>
+          <span>${basketItem.amount}</span>
+          <button type="button">+</button>
+        </div>
+
+        <data class="basket-item-price" value="${basketItem.price}">
+          ${basketItem.price.toFixed(2)}€
+        </data>
       </div>
-      <data value="${basketItem.price}">
-        ${basketItem.price.toFixed(2)}€
-      </data>  
-  </article>`
+    </article>
+  `;
+}
+
+function getEmptyBasketTemplate() {
+  return /*html*/ `
+  <div class="empty-basket">
+        <p class="empty-basket-text">
+      Dein Warenkorb ist leer.<br>
+      Wähle leckere Gerichte aus der Speisekarte.
+    </p>
+
+    <img
+      class="empty-basket-icon"
+      src="./assets/icons/shopping-cart-large.svg"
+      alt="Leerer Warenkorb">
+  </div>
+  `;
 }
