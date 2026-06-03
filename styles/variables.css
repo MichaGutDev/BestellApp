@@ -1,8 +1,10 @@
 :root {
-  --bar-color: #E76C1F;;
-  --dishes-color: #FDEADC;
-  --basket-color: #363534;
+  --bar-color: #e76c1f;
+  --dishes-color: #fdeadc;
+  --first-basket-color: #363534;
+  --second-basket-color: #fdeadc;
   --content-padding: max(calc(50% - 720px), 32px);
+  --content-padding-menu: max(calc(50% - 310px), 32px);
   --content-limitation: max(calc(50% - 720px), 0px);
   --content-padding-medium: max(calc(50% - 720px), 48px);
   --content-padding-small: max(calc(50% - 720px), 24px);
