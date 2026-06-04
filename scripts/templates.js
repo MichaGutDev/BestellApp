@@ -41,7 +41,7 @@ function getBasketItemTemplate(basketItem) {
         </div>
 
         <data class="basket-item-price" value="${basketItem.price}">
-          ${basketItem.price.toFixed(2)}€
+          ${calculateBasketItemPrice(basketItem).toFixed(2)}€
         </data>
       </div>
     </article>
@@ -62,4 +62,31 @@ function getEmptyBasketTemplate() {
       alt="Leerer Warenkorb">
   </div>
   `;
+}
+
+function getBasketSummaryTemplate(subtotal, deliveryFee, total) {
+    return /*html*/ `
+    <table class="basket-summary-table">
+  <tr>
+    <th>Subtotal</th>
+    <td>${subtotal.toFixed(2)}€</td>
+  </tr>
+
+  <tr>
+    <th>Delivery fee</th>
+    <td>${deliveryFee.toFixed(2)}€</td>
+  </tr>
+
+  <tr class="basket-summary-divider-row">
+    <td colspan="2">
+      <div class="basket-divider"></div>
+    </td>
+  </tr>
+
+  <tr>
+    <th>Total</th>
+    <td>${total.toFixed(2)}€</td>
+  </tr>
+</table>
+    `
 }

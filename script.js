@@ -1,6 +1,7 @@
 // GLOBAL VARIABLES
 
 let basketItems = [];
+const DELIVERY_FEE = 4.99;
 
 // INIT
 
@@ -40,9 +41,6 @@ function renderBasket() {
     basketList.innerHTML = "";
     basketSummary.innerHTML = "";
 
-    console.log(basketItems);
-    console.log(basketItems.length);
-
     if (basketItems.length === 0) {
         basketList.innerHTML = getEmptyBasketTemplate();
         buyButton.classList.add("d-none");
@@ -52,7 +50,16 @@ function renderBasket() {
             basketList.innerHTML += getBasketItemTemplate(basketItems[index]);
         }
 
-        basketSummary.innerHTML = getBasketSummaryTemplate();
+        let subtotal = calculateSubtotal();
+        let total = calculateTotal();
+
+        basketSummary.innerHTML = getBasketSummaryTemplate(
+        subtotal,
+        DELIVERY_FEE,
+        total
+        );
+
+        buyButton.innerHTML = `Jetzt kaufen (${total.toFixed(2)}€)`;
         buyButton.classList.remove("d-none");
     }
 }
@@ -76,7 +83,7 @@ function addToBasket(index) {
     }
 
     renderBasket();
-
+    console.log("Aktueller Warenkorb:", basketItems);
 }
 
 // HELPER FUNCTIONS
@@ -84,3 +91,22 @@ function addToBasket(index) {
 function getButtonLabel() {
     return "Add to basket";
 }
+
+function calculateBasketItemPrice(basketItem) {
+  return basketItem.price * basketItem.amount;
+}
+
+function calculateSubtotal() {
+    let subtotal = 0
+
+    for (let index = 0; index < basketItems.length; index++) {
+        subtotal += calculateBasketItemPrice(basketItems[index])        
+    }
+
+    return subtotal;    
+}
+
+function calculateTotal() {
+    return calculateSubtotal() + DELIVERY_FEE;
+}
+
