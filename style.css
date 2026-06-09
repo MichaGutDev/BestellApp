@@ -16,6 +16,11 @@ body {
   min-height: 100dvh;
 }
 
+button {
+  cursor: pointer;
+  padding: 0;
+}
+
 /* #endregion */
 
 /* #region layout */
@@ -284,7 +289,7 @@ h3 {
 .basket-item {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 12px;
   width: 100%;
   padding: 20px;
   border-radius: 20px;
@@ -301,12 +306,15 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  line-height: 1;
 }
 
 .basket-item-controls {
   display: flex;
   align-items: center;
   gap: 4px;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .basket-item-controls button {
@@ -317,6 +325,19 @@ h3 {
   border: none;
   padding: 0;
   font: inherit;
+}
+
+.basket-item-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.basket-item-title button {
+  background: transparent;
+  border: none;
+  /* padding: 0; */
+  transform: translateY(4px);
 }
 
 .basket-item-price {

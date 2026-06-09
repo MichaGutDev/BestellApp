@@ -24,7 +24,7 @@ function getDishTemplate(dish, index) {
     `;
 }
 
-function getBasketItemTemplate(basketItem) {
+function getSingleBasketItemTemplate(basketItem, index) {
   return /*html*/ `
     <article class="basket-item">
       <p class="basket-item-name">
@@ -33,11 +33,11 @@ function getBasketItemTemplate(basketItem) {
 
       <div class="basket-item-bottom">
         <div class="basket-item-controls">
-          <button type="button" class="delete-btn">
+          <button onclick="deleteBasketItem(${index})" type="button" class="delete-btn">
             <img src="./assets/icons/delete.svg" alt="Gericht entfernen">
           </button>
           <span>${basketItem.amount}</span>
-          <button type="button">+</button>
+          <button onclick="increaseBasketItemAmount(${index})" type="button">+</button>
         </div>
 
         <data class="basket-item-price" value="${basketItem.price}">
@@ -47,6 +47,33 @@ function getBasketItemTemplate(basketItem) {
     </article>
   `;
 }
+
+function getMultipleBasketItemTemplate(basketItem, index) {
+  return /*html*/ `
+    <article class="basket-item">
+      <div class="basket-item-title">
+        <p class="basket-item-name">
+          ${basketItem.amount} x ${basketItem.name}
+        </p>
+        <button onclick="deleteBasketItem(${index})" type="button" class="delete-btn">
+          <img src="./assets/icons/delete.svg" alt="Gericht entfernen">
+        </button>
+      </div>
+      <div class="basket-item-bottom">
+        <div class="basket-item-controls">
+          <button onclick="decreaseBasketItemAmount(${index})" type="button">-</button>
+          <span>${basketItem.amount}</span>
+          <button onclick="increaseBasketItemAmount(${index})" type="button">+</button>
+        </div>
+
+        <data class="basket-item-price" value="${basketItem.price}">
+          ${calculateBasketItemPrice(basketItem).toFixed(2)}€
+        </data>
+      </div>
+    </article>
+  `;
+}
+
 
 function getEmptyBasketTemplate() {
   return /*html*/ `
@@ -65,7 +92,7 @@ function getEmptyBasketTemplate() {
 }
 
 function getBasketSummaryTemplate(subtotal, deliveryFee, total) {
-    return /*html*/ `
+  return /*html*/ `
     <table class="basket-summary-table">
   <tr>
     <th>Subtotal</th>

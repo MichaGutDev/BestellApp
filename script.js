@@ -47,16 +47,16 @@ function renderBasket() {
     }
     else {
         for (let index = 0; index < basketItems.length; index++) {
-            basketList.innerHTML += getBasketItemTemplate(basketItems[index]);
+            basketList.innerHTML += getBasketItemTemplate(basketItems[index], index);
         }
 
         let subtotal = calculateSubtotal();
         let total = calculateTotal();
 
         basketSummary.innerHTML = getBasketSummaryTemplate(
-        subtotal,
-        DELIVERY_FEE,
-        total
+            subtotal,
+            DELIVERY_FEE,
+            total
         );
 
         buyButton.innerHTML = `Jetzt kaufen (${total.toFixed(2)}€)`;
@@ -83,30 +83,76 @@ function addToBasket(index) {
     }
 
     renderBasket();
-    console.log("Aktueller Warenkorb:", basketItems);
+    renderDishes();
 }
+
+function increaseBasketItemAmount(index) {
+    basketItems[index].amount++;
+
+    renderBasket();
+    renderDishes();
+}
+
+function decreaseBasketItemAmount(index) {
+    basketItems[index].amount--;
+
+    renderBasket();
+    renderDishes();
+}
+
+function deleteBasketItem(index) {
+    basketItems.splice(index, 1)
+    
+    renderBasket();
+    renderDishes();
+}
+
 
 // HELPER FUNCTIONS
 
-function getButtonLabel() {
-    return "Add to basket";
+function getButtonLabel(dish) {
+  let amount = getBasketItemAmountByName(dish.name);
+
+  if (amount === 0) {
+    return "Auswählen";
+  }
+
+  return `Gewählt ${amount}`;
 }
 
 function calculateBasketItemPrice(basketItem) {
-  return basketItem.price * basketItem.amount;
+    return basketItem.price * basketItem.amount;
 }
 
 function calculateSubtotal() {
     let subtotal = 0
 
     for (let index = 0; index < basketItems.length; index++) {
-        subtotal += calculateBasketItemPrice(basketItems[index])        
+        subtotal += calculateBasketItemPrice(basketItems[index])
     }
 
-    return subtotal;    
+    return subtotal;
 }
 
 function calculateTotal() {
     return calculateSubtotal() + DELIVERY_FEE;
+}
+
+function getBasketItemTemplate(basketItem, index) {
+    if (basketItem.amount === 1) {
+        return getSingleBasketItemTemplate(basketItem, index);
+    }
+
+    return getMultipleBasketItemTemplate(basketItem, index);
+}
+
+function getBasketItemAmountByName(dishName) {
+  for (let index = 0; index < basketItems.length; index++) {
+    if (basketItems[index].name === dishName) {
+      return basketItems[index].amount;
+    }
+  }
+
+  return 0;
 }
 
