@@ -77,14 +77,37 @@
           </section>
         </section>
         <section class="basket-area">
-          <aside class="order-basket" aria-labelledby="basket-title">
+          <aside
+            id="order-basket"
+            class="order-basket"
+            aria-labelledby="basket-title"
+          >
             <h3 id="basket-title">Warenkorb</h3>
             <div id="basket-list" class="basket-list"></div>
             <div id="basket-summary" class="basket-summary"></div>
-            <button id="buy-button" type="button" class="buy-button">Jetzt kaufen</button>
+            <button
+              id="buy-button"
+              type="button"
+              class="buy-button"
+              onclick="submitOrder()"
+            >
+              Jetzt kaufen
+            </button>
           </aside>
         </section>
       </div>
+      <dialog id="order-confirmation" class="order-confirmation">
+        <button
+          type="button"
+          class="close-dialog-btn"
+          onclick="closeOrderConfirmation()"
+          aria-label="Dialog schließen">
+          <img src="./assets/icons/close.svg" alt="" aria-hidden="true" />
+        </button>
+        <img src="./assets/img/order-dialog.png" alt="" aria-hidden="true" />
+        <h3>Bestellung bestätigt!</h3>
+        <p>Dein Essen ist unterwegs!</p>
+      </dialog>
     </main>
     <footer>
       <div class="copyright">

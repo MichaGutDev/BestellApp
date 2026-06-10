@@ -34,9 +34,9 @@ function renderCategory(category, dishListId) {
 }
 
 function renderBasket() {
-    let basketList = document.getElementById("basket-list");
-    let basketSummary = document.getElementById("basket-summary");
-    let buyButton = document.getElementById("buy-button");
+    const basketList = document.getElementById("basket-list");
+    const basketSummary = document.getElementById("basket-summary");
+    const buyButton = document.getElementById("buy-button");
 
     basketList.innerHTML = "";
     basketSummary.innerHTML = "";
@@ -102,22 +102,43 @@ function decreaseBasketItemAmount(index) {
 
 function deleteBasketItem(index) {
     basketItems.splice(index, 1)
-    
+
     renderBasket();
     renderDishes();
+}
+
+function submitOrder() {
+    const dialog = document.getElementById("order-confirmation")
+    const orderBasket = document.getElementById("order-basket")
+
+    orderBasket.classList.add("d-none")
+    dialog.showModal();
+
+    basketItems = [];
+
+}
+
+function closeOrderConfirmation() {
+    const dialog = document.getElementById("order-confirmation")
+    const orderBasket = document.getElementById("order-basket")
+
+    dialog.close();
+    orderBasket.classList.remove("d-none")
+
+    renderBasket();
 }
 
 
 // HELPER FUNCTIONS
 
 function getButtonLabel(dish) {
-  let amount = getBasketItemAmountByName(dish.name);
+    let amount = getBasketItemAmountByName(dish.name);
 
-  if (amount === 0) {
-    return "Auswählen";
-  }
+    if (amount === 0) {
+        return "Auswählen";
+    }
 
-  return `Gewählt ${amount}`;
+    return `Gewählt ${amount}`;
 }
 
 function calculateBasketItemPrice(basketItem) {
@@ -147,12 +168,12 @@ function getBasketItemTemplate(basketItem, index) {
 }
 
 function getBasketItemAmountByName(dishName) {
-  for (let index = 0; index < basketItems.length; index++) {
-    if (basketItems[index].name === dishName) {
-      return basketItems[index].amount;
+    for (let index = 0; index < basketItems.length; index++) {
+        if (basketItems[index].name === dishName) {
+            return basketItems[index].amount;
+        }
     }
-  }
 
-  return 0;
+    return 0;
 }
 
