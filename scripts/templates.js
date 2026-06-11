@@ -13,6 +13,7 @@ function getDishTemplate(dish, index) {
       <div class="dish-side">
         <data value="${dish.price}">${dish.price.toFixed(2)} €</data>
         <button
+          class="${getDishButtonClass(dish)}"
           type="button"
           onclick="addToBasket(${index})"
           aria-label="${dish.name} zum Warenkorb hinzufügen"
@@ -34,7 +35,8 @@ function getSingleBasketItemTemplate(basketItem, index) {
       <div class="basket-item-bottom">
         <div class="basket-item-controls">
           <button onclick="deleteBasketItem(${index})" type="button" class="delete-btn">
-            <img src="./assets/icons/delete.svg" alt="Gericht entfernen">
+            <img class="delete-icon" src="./assets/icons/delete.svg" alt="Gericht entfernen">
+            <img class="delete-icon-hover" src="./assets/icons/delete-orange.svg" alt="" aria-hidden="true">
           </button>
           <span>${basketItem.amount}</span>
           <button onclick="increaseBasketItemAmount(${index})" type="button">+</button>
@@ -56,7 +58,8 @@ function getMultipleBasketItemTemplate(basketItem, index) {
           ${basketItem.amount} x ${basketItem.name}
         </p>
         <button onclick="deleteBasketItem(${index})" type="button" class="delete-btn">
-          <img src="./assets/icons/delete.svg" alt="Gericht entfernen">
+          <img class="delete-icon" src="./assets/icons/delete.svg" alt="Gericht entfernen">
+          <img class="delete-icon-hover" src="./assets/icons/delete-orange.svg" alt="" aria-hidden="true">
         </button>
       </div>
       <div class="basket-item-bottom">

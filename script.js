@@ -115,6 +115,7 @@ function submitOrder() {
     dialog.showModal();
 
     basketItems = [];
+    renderDishes();
 
 }
 
@@ -175,5 +176,15 @@ function getBasketItemAmountByName(dishName) {
     }
 
     return 0;
+}
+
+function getDishButtonClass(dish) {
+    let amount = getBasketItemAmountByName(dish.name);
+
+    if (amount > 0) {
+        return "dish-button dish-button-selected";
+    }
+
+    return "dish-button";
 }
 

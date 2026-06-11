@@ -235,6 +235,25 @@ h4 {
   font-weight: 600;
 }
 
+.dish-button {
+  padding-inline: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: none;
+  border-radius: 20px;
+  background-color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.dish-button:hover {
+  color: var(--bar-color);
+}
+
+.dish-button-selected {
+  color: var(--bar-color);
+}
+
 /* #endregion */
 
 /* #region basket */
@@ -355,6 +374,18 @@ h3 {
   height: 16px;
 }
 
+.delete-btn .delete-icon-hover {
+  display: none;
+}
+
+.delete-btn:hover .delete-icon {
+  display: none;
+}
+
+.delete-btn:hover .delete-icon-hover {
+  display: block;
+}
+
 .empty-basket {
   display: flex;
   justify-content: center;
@@ -443,6 +474,48 @@ h3 {
 /* #endregion */
 
 /* #region dialog */
+
+.order-confirmation {
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 35dvh;
+  justify-self: center;
+  padding: 32px 40px;
+  background-color: var(--first-basket-color);
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  opacity: 1;
+}
+
+.order-confirmation[open] {
+  display: flex;
+}
+
+.close-dialog-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.order-confirmation p {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--second-basket-color);
+}
+
+.order-confirmation h3 {
+  padding-bottom: 0;
+}
+
+.order-confirmation::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
 
 /* #endregion */
 
