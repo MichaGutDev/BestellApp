@@ -569,7 +569,7 @@ footer p {
 
 @media screen and (max-width: 1280px) {
   .menu-selection {
-    width: calc(100% - 300px - var(--content-padding));
+    /* width: calc(100% - 300px - var(--content-padding)); */
     left: var(--content-padding-smal);
   }
 
