@@ -209,6 +209,10 @@ h2 {
   background-color: var(--dishes-color);
 }
 
+.dish-card p {
+  line-height: 1;
+}
+
 .dish-image {
   width: 200px;
   height: 120px;
@@ -219,6 +223,7 @@ h2 {
 h4 {
   font-size: 24px;
   font-weight: 600;
+  line-height: 1, 1;
   color: var(--first-basket-color);
 }
 
@@ -554,5 +559,38 @@ footer p {
 /* #endregion */
 
 /* #region media queries */
+
+@media screen and (max-width: 1440px) {
+  .dish-card {
+    margin-left: 64px;
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .menu-selection {
+    width: calc(100% - 300px - var(--content-padding));
+    left: var(--content-padding-smal);
+  }
+
+  .menu-content-limit {
+    padding-left: var(--content-padding-smal);
+    margin-left: 64px;
+  }
+
+  .dish-card {
+    margin-left: 0;
+    width: 500px;
+    grid-template-columns: 140px 1fr auto;
+  } 
+
+  .dish-image {
+    width: 120px;
+  }
+
+  .basket-area {
+    width: 350px;
+  }
+}
 
 /* #endregion */
