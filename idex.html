@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BestellApp</title>
-    <link rel="icon" type="image/svg" href="./assets/img/burger/Chanese 1.png" />
+    <link
+      rel="icon"
+      type="image/svg"
+      href="./assets/img/burger/Chanese 1.png"
+    />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
@@ -76,7 +80,7 @@
             <div id="salads-list" class="dish-render-target"></div>
           </section>
         </section>
-        <section class="basket-area">
+        <section id="basket-area" class="basket-area">
           <aside
             id="order-basket"
             class="order-basket"
@@ -101,7 +105,8 @@
           type="button"
           class="close-dialog-btn"
           onclick="closeOrderConfirmation()"
-          aria-label="Dialog schließen">
+          aria-label="Dialog schließen"
+        >
           <img src="./assets/icons/close.svg" alt="" aria-hidden="true" />
         </button>
         <img src="./assets/img/order-dialog.png" alt="" aria-hidden="true" />
@@ -109,6 +114,26 @@
         <p>Dein Essen ist unterwegs!</p>
       </dialog>
     </main>
+    <nav class="mobile-nav" aria-label="Mobile Navigation">
+      <button type="button" class="mobile-nav-btn" aria-label="Zur Startseite">
+        <img class="mobile-nav-icon" src="./assets/icons/home-white.svg" alt="" aria-hidden="true"/>
+        <img class="mobile-nav-icon-hover" src="./assets/icons/home-orange.svg" alt="" aria-hidden="true"/>
+      </button>
+      <button
+        type="button" class="mobile-nav-btn" aria-label="Kontakt anzeigen">
+        <img class="mobile-nav-icon" src="./assets/icons/person-white.svg" alt="" aria-hidden="true"/>
+        <img class="mobile-nav-icon-hover" src="./assets/icons/person-orange.svg" alt="" aria-hidden="true"/>
+      </button>
+      <button type="button" class="mobile-nav-btn" aria-label="über Uns">
+        <img class="mobile-nav-icon" src="./assets/icons/logo-white.svg" alt="" aria-hidden="true"/>
+        <img class="mobile-nav-icon-hover" src="./assets/icons/logo-orange.svg" alt="" aria-hidden="true"/>
+      </button>
+      <button type="button" class="mobile-nav-btn mobile-basket-btn" onclick="toggleMobileBasket()" aria-label="Warenkorb öffnen">
+        <img class="mobile-nav-icon" src="./assets/icons/shopping-cart-white.svg" alt="" aria-hidden="true"/>
+        <img class="mobile-nav-icon-hover" src="./assets/icons/shopping-cart-orange.svg" alt="" aria-hidden="true"/>
+        <span id="mobile-basket-counter" class="mobile-basket-counter">0</span>
+      </button>
+    </nav>
     <footer>
       <div class="copyright">
         <img src="./assets/icons/copyright.svg" alt="copyright icon" />

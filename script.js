@@ -62,6 +62,15 @@ function renderBasket() {
         buyButton.innerHTML = `Jetzt kaufen (${total.toFixed(2)}€)`;
         buyButton.classList.remove("d-none");
     }
+
+    updateMobileBasketCounter();
+}
+
+function updateMobileBasketCounter() {
+    const mobileBasketCounter = document.getElementById("mobile-basket-counter");
+    const amount = calculateBasketItemAmount();
+
+    mobileBasketCounter.innerHTML = amount;
 }
 
 // EVENT FUNCTIONS
@@ -129,6 +138,14 @@ function closeOrderConfirmation() {
     renderBasket();
 }
 
+function toggleMobileBasket() {
+
+    const basketArea = document.getElementById("basket-area");
+    const orderBasket = document.getElementById("order-basket");
+
+    basketArea.classList.toggle("basket-area-open");
+    orderBasket.classList.remove("d-none");
+}
 
 // HELPER FUNCTIONS
 
@@ -186,5 +203,15 @@ function getDishButtonClass(dish) {
     }
 
     return "dish-button";
+}
+
+function calculateBasketItemAmount() {
+    let amount = 0;
+
+    for (let index = 0; index < basketItems.length; index++) {
+        amount += basketItems[index].amount;
+    }
+
+    return amount;
 }
 

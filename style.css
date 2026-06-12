@@ -33,6 +33,8 @@ button {
   justify-content: center;
   align-items: center;
   height: 128px;
+    width: 100vw;
+
   background-color: var(--bar-color);
 }
 
@@ -51,6 +53,7 @@ button {
   display: flex;
   align-items: center;
   flex-direction: column;
+    width: 100vw;
   padding-inline: var(--content-limitation);
   padding-bottom: 78px;
 }
@@ -88,7 +91,7 @@ button {
   gap: 24px;
   padding-top: 72px;
   padding-bottom: 26px;
-  padding-inline: var(--content-padding);
+  /* padding-inline: var(--content-padding); */
 }
 
 .brand-header h1 {
@@ -143,11 +146,11 @@ button {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
+  width: 100vw;
 }
 
 .menu-selection {
-  /* padding-left: var(--content-padding); */
-  width: calc(100% - 400px - var(--content-padding));
+  width: calc(100vw - 435px - var(--content-limitation));
   left: var(--content-padding);
 }
 
@@ -188,7 +191,7 @@ h2 {
 .dish-render-target {
   display: flex;
   flex-direction: column;
-  padding-inline: var(--content-padding);
+  padding-left: var(--content-padding);
   padding-top: 32px;
   padding-bottom: 64px;
   gap: 16px;
@@ -285,10 +288,6 @@ h4 {
   padding-top: 50px;
   padding-right: 48px;
 }
-
-/* .order-basket p {
-  color: #ffffff;
-} */
 
 .basket-list {
   display: flex;
@@ -524,6 +523,74 @@ h3 {
 
 /* #endregion */
 
+/* #region mobil-nav */
+
+.mobile-nav {
+  display: none;
+}
+
+.mobile-nav-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 48px;
+  height: 48px;
+
+  background: transparent;
+  border: none;
+}
+
+.mobile-nav-icon,
+.mobile-nav-icon-hover {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.mobile-nav-icon-hover {
+  display: none;
+}
+
+.mobile-nav-btn:hover .mobile-nav-icon,
+.mobile-nav-btn:active .mobile-nav-icon {
+  display: none;
+}
+
+.mobile-nav-btn:hover .mobile-nav-icon-hover,
+.mobile-nav-btn:active .mobile-nav-icon-hover {
+  display: block;
+}
+
+.mobile-basket-btn {
+  position: relative;
+}
+
+.mobile-basket-counter {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+  background-color: var(--second-basket-color);
+  color: var(--bar-color);
+
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* #endregion */
+
 /* #region footer */
 
 footer {
@@ -531,6 +598,7 @@ footer {
   justify-content: center;
   align-items: center;
   height: 128px;
+    width: 100vw;
   gap: 128px;
   background-color: var(--bar-color);
 }
@@ -569,7 +637,7 @@ footer p {
 
 @media screen and (max-width: 1280px) {
   .menu-selection {
-    /* width: calc(100% - 300px - var(--content-padding)); */
+    width: calc(100% - 350px - var(--content-limitation));
     left: var(--content-padding-smal);
   }
 
@@ -582,7 +650,7 @@ footer p {
     margin-left: 0;
     width: 500px;
     grid-template-columns: 140px 1fr auto;
-  } 
+  }
 
   .dish-image {
     width: 120px;
@@ -591,6 +659,94 @@ footer p {
   .basket-area {
     width: 350px;
   }
+}
+
+@media screen and (max-width: 768px) {
+  .ordering-system {
+    display: block;
+  }
+
+  .menu-selection {
+    width: 100%;
+  }
+
+    .basket-area {
+    display: none;
+  }
+
+
+  .order-basket {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 70dvh;
+    
+  }
+
+  .mobile-basket-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+
+    display: block;
+    background: transparent;
+    border: none;
+  }
+
+  .mobile-basket-close-btn img {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+
+
+  .basket-area.basket-area-open {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 72px;
+    z-index: 90;
+
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    padding: 16px;
+  }
+
+  .dish-card {
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin-left: 0;
+    padding: 12px;
+  }
+
+  .dish-image {
+    width: 100%;
+    height: 86px;
+  }
+
+  .dish-side {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    height: 72px;
+    background-color: var(--first-basket-color);
+  }
+
 }
 
 /* #endregion */

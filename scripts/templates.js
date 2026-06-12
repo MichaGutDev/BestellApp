@@ -103,7 +103,7 @@ function getBasketSummaryTemplate(subtotal, deliveryFee, total) {
   </tr>
 
   <tr>
-    <th>Delivery fee</th>
+    <th>Lieferkosten</th>
     <td>${deliveryFee.toFixed(2)}€</td>
   </tr>
 
