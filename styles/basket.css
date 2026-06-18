@@ -1,0 +1,261 @@
+/* #region basket */
+
+.basket-area {
+  position: absolute;
+  top: 0;
+  right: var(--content-padding);
+  bottom: 0;
+  width: var(--basket-width);
+  z-index: 2;
+}
+
+.order-basket {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: var(--first-basket-color);
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  padding: 30px;
+  padding-top: 50px;
+  padding-right: 48px;
+}
+
+.basket-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-height: 350px;
+  overflow-y: auto;
+  padding-right: 12px;
+  font-size: 22px;
+  color: var(--first-basket-color);
+  border-radius: 20px;
+}
+
+h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--second-basket-color);
+  padding-bottom: 24px;
+}
+
+.basket-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--dishes-color);
+}
+
+.basket-item-name {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.basket-item-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1;
+}
+
+.basket-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.basket-item-controls button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font: inherit;
+}
+
+.basket-item-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.basket-item-title button {
+  background: transparent;
+  border: none;
+  transform: translateY(4px);
+}
+
+.basket-item-price {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.delete-btn {
+  transform: translateY(2px);
+}
+
+.delete-btn img {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.delete-btn .delete-icon-hover {
+  display: none;
+}
+
+.delete-btn:hover .delete-icon {
+  display: none;
+}
+
+.delete-btn:hover .delete-icon-hover {
+  display: block;
+}
+
+.empty-basket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 68px;
+}
+
+.empty-basket-text {
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--second-basket-color);
+}
+
+.empty-basket-icon {
+  width: 128px;
+  height: 128px;
+  color: var(--second-basket-color);
+}
+
+.basket-summary {
+  width: 100%;
+  padding-right: 12px;
+  padding-top: 24px;
+}
+
+.basket-summary-table {
+  width: 100%;
+}
+
+.basket-summary-table th {
+  text-align: left;
+  font-size: 20px;
+  color: #ffffff;
+  padding-left: 12px;
+}
+
+.basket-summary-table td {
+  text-align: right;
+  font-size: 20px;
+  color: #ffffff;
+  padding-right: 12px;
+}
+
+.basket-summary-divider-row td {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.basket-divider {
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 999px;
+}
+
+.basket-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.basket-list::-webkit-scrollbar-thumb {
+  background-color: var(--dishes-color);
+  border-radius: 999px;
+}
+
+.basket-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+/* #endregion */
+
+@media screen and (max-width: 1280px) {
+  .basket-area {
+    right: var(--content-padding-small);
+    width: var(--basket-width);
+  }
+
+}
+
+@media screen and (max-width: 980px) {
+  .ordering-system {
+    --basket-width: 300px;
+  }
+
+} 
+
+@media screen and (max-width: 768px) {
+
+  .basket-area {
+    display: none;
+  }
+
+  .order-basket {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 43dvh;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 30px;
+  }
+
+  .mobile-basket-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+
+    display: block;
+    background: transparent;
+    border: none;
+  }
+
+  .mobile-basket-close-btn img {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+
+  .basket-area.basket-area-open {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 72px;
+    z-index: 90;
+
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    padding: 16px;
+  }
+
+}
+
+/* #endregion */
+
