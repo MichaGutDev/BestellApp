@@ -49,7 +49,7 @@
       </section>
       <div class="ordering-system">
         <section class="menu-selection">
-          <section id="category-burgers">
+          <section id="category-burgers" class="category-section">
             <header class="category-divider">
               <div class="menu-content-limit">
                 <img
@@ -59,25 +59,31 @@
                 <h2>Burger & Sandwiches</h2>
               </div>
             </header>
-            <div id="burgers-list" class="dish-render-target"></div>
+            <div class="category-content">
+              <div id="burgers-list" class="dish-render-target"></div>
+            </div>
           </section>
-          <section id="category-pizza">
+          <section id="category-pizza" class="category-section">
             <header class="category-divider">
               <div class="menu-content-limit">
                 <img src="./assets/img/pizza/Pizza 1.png" alt="Pizza Icon" />
                 <h2>Pizza<span class="diameter">(30cm)</span></h2>
               </div>
             </header>
-            <div id="pizza-list" class="dish-render-target"></div>
+            <div class="category-content">
+              <div id="pizza-list" class="dish-render-target"></div>
+            </div>
           </section>
-          <section id="category-salads">
+          <section id="category-salads" class="category-section">
             <header class="category-divider">
               <div class="menu-content-limit">
                 <img src="./assets/img/salad/Salad 1.png" alt="Salat Icon" />
                 <h2>Salate</h2>
               </div>
             </header>
-            <div id="salads-list" class="dish-render-target"></div>
+            <div class="category-content">
+              <div id="salads-list" class="dish-render-target"></div>
+            </div>
           </section>
         </section>
         <section id="basket-area" class="basket-area">
@@ -86,6 +92,14 @@
             class="order-basket"
             aria-labelledby="basket-title"
           >
+            <button
+              type="button"
+              class="mobile-basket-close-btn"
+              onclick="closeMobileBasket()"
+              aria-label="Warenkorb schließen"
+            >
+              <img src="./assets/icons/close.svg" alt="" aria-hidden="true" />
+            </button>
             <h3 id="basket-title">Warenkorb</h3>
             <div id="basket-list" class="basket-list"></div>
             <div id="basket-summary" class="basket-summary"></div>
@@ -116,21 +130,69 @@
     </main>
     <nav class="mobile-nav" aria-label="Mobile Navigation">
       <button type="button" class="mobile-nav-btn" aria-label="Zur Startseite">
-        <img class="mobile-nav-icon" src="./assets/icons/home-white.svg" alt="" aria-hidden="true"/>
-        <img class="mobile-nav-icon-hover" src="./assets/icons/home-orange.svg" alt="" aria-hidden="true"/>
+        <img
+          class="mobile-nav-icon"
+          src="./assets/icons/home-white.svg"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          class="mobile-nav-icon-hover"
+          src="./assets/icons/home-orange.svg"
+          alt=""
+          aria-hidden="true"
+        />
       </button>
       <button
-        type="button" class="mobile-nav-btn" aria-label="Kontakt anzeigen">
-        <img class="mobile-nav-icon" src="./assets/icons/person-white.svg" alt="" aria-hidden="true"/>
-        <img class="mobile-nav-icon-hover" src="./assets/icons/person-orange.svg" alt="" aria-hidden="true"/>
+        type="button"
+        class="mobile-nav-btn"
+        aria-label="Kontakt anzeigen"
+      >
+        <img
+          class="mobile-nav-icon"
+          src="./assets/icons/person-white.svg"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          class="mobile-nav-icon-hover"
+          src="./assets/icons/person-orange.svg"
+          alt=""
+          aria-hidden="true"
+        />
       </button>
       <button type="button" class="mobile-nav-btn" aria-label="über Uns">
-        <img class="mobile-nav-icon" src="./assets/icons/logo-white.svg" alt="" aria-hidden="true"/>
-        <img class="mobile-nav-icon-hover" src="./assets/icons/logo-orange.svg" alt="" aria-hidden="true"/>
+        <img
+          class="mobile-nav-icon"
+          src="./assets/icons/logo-white.svg"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          class="mobile-nav-icon-hover"
+          src="./assets/icons/logo-orange.svg"
+          alt=""
+          aria-hidden="true"
+        />
       </button>
-      <button type="button" class="mobile-nav-btn mobile-basket-btn" onclick="toggleMobileBasket()" aria-label="Warenkorb öffnen">
-        <img class="mobile-nav-icon" src="./assets/icons/shopping-cart-white.svg" alt="" aria-hidden="true"/>
-        <img class="mobile-nav-icon-hover" src="./assets/icons/shopping-cart-orange.svg" alt="" aria-hidden="true"/>
+      <button
+        type="button"
+        class="mobile-nav-btn mobile-basket-btn"
+        onclick="toggleMobileBasket()"
+        aria-label="Warenkorb öffnen"
+      >
+        <img
+          class="mobile-nav-icon"
+          src="./assets/icons/shopping-cart-white.svg"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          class="mobile-nav-icon-hover"
+          src="./assets/icons/shopping-cart-orange.svg"
+          alt=""
+          aria-hidden="true"
+        />
         <span id="mobile-basket-counter" class="mobile-basket-counter">0</span>
       </button>
     </nav>

@@ -147,6 +147,12 @@ function toggleMobileBasket() {
     orderBasket.classList.remove("d-none");
 }
 
+function closeMobileBasket() {
+    const basketArea = document.getElementById("basket-area");
+
+    basketArea.classList.remove("basket-area-open");
+}
+
 // HELPER FUNCTIONS
 
 function getButtonLabel(dish) {
