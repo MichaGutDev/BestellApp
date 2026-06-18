@@ -38,32 +38,55 @@ function renderBasket() {
     const basketSummary = document.getElementById("basket-summary");
     const buyButton = document.getElementById("buy-button");
 
-    basketList.innerHTML = "";
-    basketSummary.innerHTML = "";
+    clearBasketView(basketList, basketSummary);
 
     if (basketItems.length === 0) {
-        basketList.innerHTML = getEmptyBasketTemplate();
-        buyButton.classList.add("d-none");
+        renderEmptyBasket(basketList, buyButton);
+    } else {
+        renderFullBasket(basketList, basketSummary, buyButton);
     }
-    else {
-        for (let index = 0; index < basketItems.length; index++) {
-            basketList.innerHTML += getBasketItemTemplate(basketItems[index], index);
-        }
 
-        let subtotal = calculateSubtotal();
-        let total = calculateTotal();
+    updateBasketAfterRender();
+}
 
-        basketSummary.innerHTML = getBasketSummaryTemplate(
-            subtotal,
-            DELIVERY_FEE,
-            total
+function clearBasketView(basketList, basketSummary) {
+    basketList.innerHTML = "";
+    basketSummary.innerHTML = "";
+}
+
+function renderEmptyBasket(basketList, buyButton) {
+    basketList.innerHTML = getEmptyBasketTemplate();
+    buyButton.classList.add("d-none");
+}
+
+function renderFullBasket(basketList, basketSummary, buyButton) {
+    renderBasketItems(basketList);
+
+    const subtotal = calculateSubtotal();
+    const total = calculateTotal();
+
+    basketSummary.innerHTML = getBasketSummaryTemplate(
+        subtotal,
+        DELIVERY_FEE,
+        total
+    );
+
+    buyButton.innerHTML = `Jetzt kaufen (${total.toFixed(2)}€)`;
+    buyButton.classList.remove("d-none");
+}
+
+function renderBasketItems(basketList) {
+    for (let index = 0; index < basketItems.length; index++) {
+        basketList.innerHTML += getBasketItemTemplate(
+            basketItems[index],
+            index
         );
-
-        buyButton.innerHTML = `Jetzt kaufen (${total.toFixed(2)}€)`;
-        buyButton.classList.remove("d-none");
     }
+}
 
+function updateBasketAfterRender() {
     updateMobileBasketCounter();
+    closeMobileBasketIfEmpty();
 }
 
 function updateMobileBasketCounter() {
@@ -71,6 +94,14 @@ function updateMobileBasketCounter() {
     const amount = calculateBasketItemAmount();
 
     mobileBasketCounter.innerHTML = amount;
+}
+
+function closeMobileBasketIfEmpty() {
+    const basketArea = document.getElementById("basket-area");
+
+    if (calculateBasketItemAmount() === 0) {
+        basketArea.classList.remove("basket-area-open");
+    }
 }
 
 // EVENT FUNCTIONS
@@ -142,6 +173,11 @@ function toggleMobileBasket() {
 
     const basketArea = document.getElementById("basket-area");
     const orderBasket = document.getElementById("order-basket");
+
+    if (calculateBasketItemAmount() === 0) {
+        basketArea.classList.remove("basket-area-open");
+        return;
+    }
 
     basketArea.classList.toggle("basket-area-open");
     orderBasket.classList.remove("d-none");
@@ -220,4 +256,5 @@ function calculateBasketItemAmount() {
 
     return amount;
 }
+
 
