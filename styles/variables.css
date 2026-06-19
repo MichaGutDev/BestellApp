@@ -6,4 +6,5 @@
   --content-padding: max(calc(50% - 720px), 32px);
   --content-limitation: max(calc(50% - 720px), 0px);
   --content-padding-small: max(calc(50% - 720px), 24px);
+  --mobile-nav-height: 72px;
 }

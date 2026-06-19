@@ -193,6 +193,11 @@ h3 {
 .basket-list::-webkit-scrollbar-track {
   background: transparent;
 }
+
+.mobile-basket-close-btn {
+  display: none;
+} 
+
 /* #endregion */
 
 @media screen and (max-width: 1280px) {
@@ -220,7 +225,9 @@ h3 {
     position: relative;
     width: 100%;
     max-width: 400px;
-    height: 43dvh;
+    max-height: 100%;
+    height: auto;
+    min-height: 0;
     border-bottom-left-radius: 0;
     border-top-right-radius: 30px;
   }
@@ -245,7 +252,7 @@ h3 {
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 72px;
+    bottom: calc(var(--mobile-nav-height) + 16px);
     z-index: 90;
 
     display: flex;
@@ -254,6 +261,20 @@ h3 {
     width: 100%;
     padding: 16px;
   }
+
+  @media screen and (max-width: 768px) {
+  .basket-list {
+    flex: 1;
+    min-height: 0;
+    max-height: none;
+    overflow-y: auto;
+  }
+
+  .basket-summary,
+  .buy-button {
+    flex-shrink: 0;
+  }
+}
 
 }
 

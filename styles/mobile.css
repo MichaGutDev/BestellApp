@@ -64,10 +64,6 @@
   line-height: 1;
 }
 
-.mobile-basket-close-btn {
-  display: none;
-}
-
 /* #endregion */
 
 @media screen and (max-width: 768px) {
