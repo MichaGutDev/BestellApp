@@ -13,6 +13,7 @@ function getDishTemplate(dish, index) {
       <div class="dish-side">
         <data value="${dish.price}">${dish.price.toFixed(2)} €</data>
         <button
+          id="dish-button-${index}"
           class="${getDishButtonClass(dish)}"
           type="button"
           onclick="addToBasket(${index})"
@@ -98,7 +99,7 @@ function getBasketSummaryTemplate(subtotal, deliveryFee, total) {
   return /*html*/ `
     <table class="basket-summary-table">
   <tr>
-    <th>Subtotal</th>
+    <th>Zwischensumme</th>
     <td>${subtotal.toFixed(2)}€</td>
   </tr>
 
