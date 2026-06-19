@@ -1,16 +1,10 @@
-// GLOBAL VARIABLES
-
 let basketItems = [];
 const DELIVERY_FEE = 4.99;
-
-// INIT
 
 function init() {
     renderDishes();
     renderBasket();
 }
-
-// RENDER FUNCTIONS
 
 function renderDishes() {
     renderCategory("burger", "burgers-list");
@@ -19,17 +13,17 @@ function renderDishes() {
 }
 
 function renderCategory(category, dishListId) {
-    let dishList = document.getElementById(dishListId);
-
-    let categoryDishes = dishes.filter(dish => dish.category === category);
+    const dishList = document.getElementById(dishListId);
 
     dishList.innerHTML = "";
 
-    for (let index = 0; index < categoryDishes.length; index++) {
-        dishList.innerHTML += getDishTemplate(
-            categoryDishes[index],
-            index);
-
+    for (let index = 0; index < dishes.length; index++) {
+        if (dishes[index].category === category) {
+            dishList.innerHTML += getDishTemplate(
+                dishes[index],
+                index
+            );
+        }
     }
 }
 
@@ -47,6 +41,14 @@ function renderBasket() {
     }
 
     updateBasketAfterRender();
+}
+
+function updateDishButton(index) {
+    const dishButton = document.getElementById("dish-button-" + index);
+    const dish = dishes[index];
+
+    dishButton.innerHTML = getButtonLabel(dish);
+    dishButton.className = getDishButtonClass(dish);
 }
 
 function clearBasketView(basketList, basketSummary) {
@@ -104,26 +106,23 @@ function closeMobileBasketIfEmpty() {
     }
 }
 
-// EVENT FUNCTIONS
-
 function addToBasket(index) {
     let selectedDish = dishes[index];
 
-    let dishAlreadyExists = false;
+    let isdishAlreadyExists = false;
     for (let index = 0; index < basketItems.length; index++) {
         if (basketItems[index].name === selectedDish.name) {
             basketItems[index].amount++;
-            dishAlreadyExists = true;
+            isdishAlreadyExists = true;
         }
-
     }
-
-    if (dishAlreadyExists === false) {
+    
+    if (isdishAlreadyExists === false) {
         basketItems.push({ ...selectedDish, amount: 1 });
     }
 
     renderBasket();
-    renderDishes();
+    updateDishButton(index);
 }
 
 function increaseBasketItemAmount(index) {
@@ -188,8 +187,6 @@ function closeMobileBasket() {
 
     basketArea.classList.remove("basket-area-open");
 }
-
-// HELPER FUNCTIONS
 
 function getButtonLabel(dish) {
     let amount = getBasketItemAmountByName(dish.name);
