@@ -1,13 +1,12 @@
-let dishes = [
+const dishes = [
 
-    //  BURGER
   {
     name: "Veggie mushroom black burger",
     category: "burger",
     imageSource: "./assets/img/burger/veggie-mushroom-black-burger.jpg",
     imageAlt: "Black Burger",
     price: 16.9,
-    ingredients: "Mixed green salad, Tomatoes, Edamame, Mushrooms",
+    ingredients: "Gemischter grüner Salat, Tomaten, Edamame, Champignons",
   },
   {
     name: "All meat burger",
@@ -15,7 +14,7 @@ let dishes = [
     imageSource: "./assets/img/burger/all-meat-burger.jpg",
     imageAlt: "All Meat Burger",
     price: 15.9,
-    ingredients: "Beef, Bacon, Dill pickles, Smoked cheese, Ketchup, BBQ sauce",
+    ingredients: "Rindfleisch, Speck, Gewürzgurken, Räucherkäse, Ketchup, BBQ-Sauce",
   },
   {
     name: "Beef red burger",
@@ -23,7 +22,7 @@ let dishes = [
     imageSource: "./assets/img/burger/beef-red-burger.jpg",
     imageAlt: "Beef Red Burger",
     price: 14.9,
-    ingredients: "Beef, Cheese, Tomatoes, Lettuce, Onion",
+    ingredients: "Rindfleisch, Käse, Tomaten, Blattsalat, Zwiebeln",
   },
   {
     name: "Big chicken burger",
@@ -31,10 +30,8 @@ let dishes = [
     imageSource: "./assets/img/burger/big-chicken-burger.jpg",
     imageAlt: "Big Chicken Burger",
     price: 15.9,
-    ingredients: "Chicken, Cheese, Tomatoes, Lettuce, Onion, Bell pepper",
+    ingredients: "Poulet, Käse, Tomaten, Blattsalat, Zwiebeln, Paprika",
   },
-
-  //  PIZZA
 
   {
     name: "Pizza Margherita",
@@ -42,7 +39,7 @@ let dishes = [
     imageSource: "./assets/img/pizza/pizza-margherita.jpg",
     imageAlt: "Pizza Margherita",
     price: 11.9,
-    ingredients: "Tomato Sauce, Mozzarella",
+    ingredients: "Tomatensauce, Mozzarella",
   },
   {
     name: "Pizza Chorizo",
@@ -50,7 +47,7 @@ let dishes = [
     imageSource: "./assets/img/pizza/pizza-chorizo.jpg",
     imageAlt: "Pizza Chorizo",
     price: 13.9,
-    ingredients: "Tomato slices, Mozzarella, Chorizo",
+    ingredients: "Tomatenscheiben, Mozzarella, Chorizo",
   },
   {
     name: "Funghi",
@@ -58,7 +55,7 @@ let dishes = [
     imageSource: "./assets/img/pizza/pizza-funghi.jpg",
     imageAlt: "Pizza Funghi",
     price: 12.9,
-    ingredients: "Red onion, Olives, Button Mushrooms, Mozzarella",
+    ingredients: "Rote Zwiebeln, Oliven, Champignons, Mozzarella",
   },
   {
     name: "Quattro Formaggi with Chicken",
@@ -66,10 +63,8 @@ let dishes = [
     imageSource: "./assets/img/pizza/pizza-quattro-formaggi-with-chicken.jpg",
     imageAlt: "Pizza Quattro Formaggi with Chicken",
     price: 15.9,
-    ingredients: "Chicken, Mozzarella, Gorgonzola, Fontina, Parmigiano Reggiano",
+    ingredients: "Poulet, Mozzarella, Gorgonzola, Fontina, Parmigiano Reggiano",
   },
-
-  //  SALAD
 
   {
     name: "Warm beef arugula salad",
@@ -77,8 +72,7 @@ let dishes = [
     imageSource: "./assets/img/salad/warm-beef-arugula-salad.jpg",
     imageAlt: "Warm Beef Salad",
     price: 16.9,
-    ingredients:
-      "Beef, Arugula, Field salad, Greek feta, Cherry tomatoes, Sun-dried Tomatoes, Balsamic-vinegar dressing",
+    ingredients: "Rindfleisch, Rucola, Feldsalat, griechischer Feta, Cherrytomaten, getrocknete Tomaten, Balsamico-Dressing",
   },
   {
     name: "Mini green Salad",
@@ -86,7 +80,7 @@ let dishes = [
     imageSource: "./assets/img/salad/mini-green-salad.jpg",
     imageAlt: "Mini Green Salad",
     price: 17.9,
-    ingredients: "Green salad, Cucumber, Carrots, Parsley, Radishes",
+    ingredients: "Grüner Salat, Gurke, Karotten, Petersilie, Radieschen",
   },
   {
     name: "Green Salad with sea food",
@@ -94,8 +88,7 @@ let dishes = [
     imageSource: "./assets/img/salad/green-salad-with-sea-food.jpg",
     imageAlt: "Green Salad with Seafood",
     price: 16.9,
-    ingredients:
-      "Mixed greens, Cherry tomatoes, Red onion, Mussels, Squid rings, Shrimp, Dijon mustard-lemon dressing with dill",
+    ingredients: "Gemischter grüner Salat, Cherrytomaten, rote Zwiebeln, Muscheln, Tintenfischringe, Garnelen, Dijon-Senf-Zitronen-Dressing mit Dill",
   },
   {
     name: "Vegan green salad with tofu",
@@ -103,8 +96,7 @@ let dishes = [
     imageSource: "./assets/img/salad/vegan-green-salad-with-tofu.jpg",
     imageAlt: "Vegan green salad with tofu",
     price: 14.9,
-    ingredients:
-      "Green salad, Cherry tomatoes, Cucumber, Baby spinach, Edamame, Radishes, Bittercress, Tofu, Peanuts",
+    ingredients: "Grüner Salat, Cherrytomaten, Gurke, Babyspinat, Edamame, Radieschen, Bitterkresse, Tofu, Erdnüsse",
   },
 ];
 
