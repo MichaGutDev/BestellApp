@@ -2,6 +2,10 @@
 
 A responsive food-ordering web app for a fictional restaurant ("BurgerHouse"), built with plain HTML, CSS and vanilla JavaScript – no framework, no build tools.
 
+## Preview
+
+![Preview](preview.png)
+
 ## Features
 
 - Menu with three categories: **Burgers & Sandwiches**, **Pizza**, **Salads**
