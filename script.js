@@ -112,7 +112,7 @@ function addToBasket(index) {
     let isdishAlreadyExists = false;
     for (let index = 0; index < basketItems.length; index++) {
         if (basketItems[index].name === selectedDish.name) {
-            basketItems[index].amount++;
+            basketItems[index].amount += 1;
             isdishAlreadyExists = true;
         }
     }
