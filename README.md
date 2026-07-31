@@ -69,4 +69,8 @@ Alternatively, `index.html` can be opened directly in the browser.
 
 ## License
 
-MIT
+> [!NOTE]
+> This project is a practice project created for learning purposes. Images and icons under `assets/` may be subject to their own licenses/rights and are not necessarily covered by the MIT License below. "BurgerHouse" is a fictional restaurant name used for demonstration purposes only.
+
+> [!IMPORTANT]
+> See the [LICENSE](LICENSE) file for details.
