@@ -4,7 +4,7 @@ A responsive food-ordering web app for a fictional restaurant ("BurgerHouse"), b
 
 ## Preview
 
-![Preview](preview.png)
+![Preview](assets/img/preview.png)
 
 ## Features
 
